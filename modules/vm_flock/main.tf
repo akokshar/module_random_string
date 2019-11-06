@@ -23,7 +23,7 @@ resource "aws_instance" "vm_flock" {
     // works
     for_each = { for k,v in var.servers_list: k=>v }
     // will fail
-    //for_each = { for k,v in var.servers_list: k=>v if lookup(v, "enable", false) == true }
+    //for_each = { for k,v in var.servers_list: k => v if lookup(v, "enable", false) == true }
 
     //depends_on = [null_resource.module_dependencies]
     
